@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/Workspace/Java/Data/SimpleBlog/src/java/sangnv/servlet/AdminSearchServlet.java</file>
+            <file>file:/D:/Workspace/Java/Data/SimpleBlog/src/java/sangnv/servlet/LoginServlet.java</file>
+            <file>file:/D:/Workspace/Java/Data/SimpleBlog/src/java/sangnv/servlet/AdminDeleteServlet.java</file>
+            <file>file:/D:/Workspace/Java/Data/SimpleBlog/src/java/sangnv/servlet/LogoutServlet.java</file>
+            <file>file:/D:/Workspace/Java/Data/SimpleBlog/src/java/sangnv/servlet/RegisterServlet.java</file>
+            <file>file:/D:/Workspace/Java/Data/SimpleBlog/src/java/sangnv/servlet/ViewDetailServlet.java</file>
+            <file>file:/D:/Workspace/Java/Data/SimpleBlog/src/java/sangnv/servlet/AdminApproveServlet.java</file>
+            <file>file:/D:/Workspace/Java/Data/SimpleBlog/src/java/sangnv/servlet/ConfirmMailServlet.java</file>
+            <file>file:/D:/Workspace/Java/Data/SimpleBlog/src/java/sangnv/servlet/AdminViewDetailServlet.java</file>
+            <file>file:/D:/Workspace/Java/Data/SimpleBlog/src/java/sangnv/servlet/MemberPostCommentServlet.java</file>
+            <file>file:/D:/Workspace/Java/Data/SimpleBlog/src/java/sangnv/servlet/SearchServlet.java</file>
+            <file>file:/D:/Workspace/Java/Data/SimpleBlog/src/java/sangnv/servlet/MemberPostArticleServlet.java</file>
+        </group>
+    </open-files>
+</project-private>

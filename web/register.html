@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Register Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="lib/jquery-3.4.1.js" type="text/javascript"></script>
+        <script src="lib/jquery.validate.js" type="text/javascript"></script>
+        <script src="lib/additional-methods.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            // jQuery Validator method for required not blank.
+            $.validator.addMethod('requiredNotBlank', function (value, element) {
+                return $.validator.methods.required.call(this, $.trim(value), element);
+            }, "Field should not be blank!");
+
+            $().ready(function () {
+                $("#registerForm").validate({
+                    rules: {
+                        email: {
+                            required: true,
+                            email: true,
+                            requiredNotBlank: true
+                        },
+                        name: {
+                            required: true,
+                            requiredNotBlank: true
+                        },
+                        password: {
+                            required: {
+                                depends: function () {
+                                    $(this).val($.trim($(this).val()));
+                                    return true;
+                                }
+                            },
+                            nowhitespace: true
+                        },
+                        passwordConfirm: {
+                            required: {
+                                depends: function () {
+                                    $(this).val($.trim($(this).val()));
+                                    return true;
+                                }
+                            },
+                            equalTo: "#password",
+                            nowhitespace: true
+                        }
+                    },
+                    messages: {
+                        email: {
+                            required: "Please input email field!",
+                            email: "Please input correct email format!"
+                        },
+                        name: {
+                            required: "Please input name field!"
+                        },
+                        password: {
+                            required: "Please input password field!"
+                        },
+                        passwordConfirm: {
+                            required: "Please input password confirm field!",
+                            equalTo: "Password confirm must be match to password!"
+                        }
+                    }
+                });
+
+            });
+
+            $(document).ready(function () {
+                $("#registerForm").submit(function () {
+                    if ($('#registerForm').valid()) { //checks if it's valid
+                        $("#RegisterBtn").attr("disabled", true);
+                        return true;
+                    } else {
+                        return false;
+                    }
+                });
+            });
+
+        </script>
+        <style>
+            .error{
+                color: red;
+            }
+            .Title{
+                padding: 30px;
+                font-size: 40px;
+                text-align: center;
+                background: bisque;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="Title">
+            <h1>Simple Blog</h1>
+        </div>
+        <br/>
+        <nav>
+            <button type="button" onclick="location.href = 'searchAction'">Home</button>
+            <button type="button" onclick="location.href = 'loginPage'">Login</button>
+        </nav>
+        <h1>Register</h1>
+        <form action="registerAction" id="registerForm" method="POST">
+            <table border="1">
+                <tbody>
+                    <tr>
+                        <td>Email:</td>
+                        <td>
+                            <input name="email" id="email"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Name:</td>
+                        <td>
+                            <input type="text" name="name" id="name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td>
+                            <input type="password" name="password" id="password"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Password confirm</td>
+                        <td>
+                            <input type="password" name="passwordConfirm" id="passwordConfirm"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="Register" id="RegisterBtn"/>
+                            <i style="display: none" id="registerText">Processing</i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>
